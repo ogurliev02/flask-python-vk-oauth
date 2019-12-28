@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title> Вход </title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_enter.css') }}">
+</head>
+
+<body class="text-center">
+    <form class="form-signin" action="/authorization">
+        <h1 class="h3 mb-3 font-weight-normal">Подтвердите желание авторизоваться</h1>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Авторизоваться</button>
+    </form>
+</body>
+
+</html>

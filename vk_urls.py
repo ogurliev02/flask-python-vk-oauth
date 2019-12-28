@@ -1,0 +1,7 @@
+REDIRECT_URL = '127.0.0.1:5000'
+VK_ACCESS_TOKEN_URL = 'https://oauth.vk.com/access_token'
+VK_AUTHORIZE_URL = 'https://oauth.vk.com/authorize'
+VK_API_GET_FRIENDS_URL = 'https://api.vk.com/method/friends.get'
+VK_API_GET_USER_INFO_URL = 'https://api.vk.com/method/users.get'
+VK_API_GET_CITY_NAME_BY_ID = 'https://api.vk.com/method/database.getCitiesById'
+VK_API_VERSION = '5.95'

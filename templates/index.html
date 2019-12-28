@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title> Главная страница </title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_index.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="navbar-brand d-flex align-items-center">
+                <a href="{{'https://vk.com/id' ~ user_info['uid']}}"> <img class="avatar-user" src="{{user_info['photo_200_orig']}}" height="50" width="50" border="3"></a>
+                <div>&nbsp;Привет, {{user_info['first_name']}}. </div>
+            </div>
+            <button class="btn btn-outline-secondary" onclick="logout()">Выход.</button>
+        </div>
+        <div class="bg-light">
+            {% for friend in friends_list %}
+            <div class="row text-muted border-bottom border-gray py-3 px-3 align-items-center">
+                <div class="col">
+                    <div class="avatar-wrapper">
+                        <a href="{{'https://vk.com/id' ~ friend['user_id']}}"><img class="avatar-friend" src="{{friend['photo_100']}}"></a>
+                        {% if friend['online'] == 1 %}
+                        <a href="{{'https://vk.com/id' ~ friend['user_id']}}"><img class="avatar-online" title="Online" src="{{ url_for('static', filename='online.png') }}"></a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col">
+                    {{friend['first_name'] ~ ' ' ~ friend['last_name']}}
+                    <br> Город:&nbsp; {{friend['city']}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
